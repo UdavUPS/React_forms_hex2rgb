@@ -20,10 +20,13 @@ function App() {
     
     const { value } = e.target;
     let lastValue: any;
-    lastValue = value.substring(0, value.length - 1);;
+    lastValue = value.substring(0, value.length );
 
+    if (value.length == 8) {
+      lastValue = value.substring(0, value.length - 1);
+    }
 
-    if (value.length < 8) {
+    if (value.length < 7) {
       if (value[0] !== "#") {
         textRef.current.value = "#" + value;
       }
